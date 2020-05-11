@@ -1,0 +1,921 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>夢所</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin:0;
+padding:0;
+border:0;
+outline:0;
+font-size:100%;
+font: inherit;
+vertical-align:baseline;
+background:transparent;
+-webkit-transition: all .5s ease-in-out;
+-moz-transition: all .5s ease-in-out;
+-ms-transition: all .5s ease-in-out;
+-o-transition: all .5s ease-in-out;
+transition: all .5s ease-in-out;
+}
+body {
+line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+display:block;
+}
+ol, ul, nav ul {
+list-style:none;
+margin:0;
+padding:0;
+overflow: hidden;
+}
+/*li {
+display: inline;
+}*/
+blockquote, q {
+quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content:'';
+content:none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+margin:0;
+padding:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+text-decoration:none;
+color: inherit;
+cursor: pointer;
+}
+/* change colours to suit your needs */
+ins {
+background-color:#ff9;
+color:#000;
+text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+background-color:#ff9;
+color:#000;
+font-style:italic;
+font-weight:bold;
+}
+del {
+text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+border-bottom:1px dotted;
+cursor:help;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td {
+position:relative;
+}
+/* change border colour to suit your needs */
+hr {
+display:block;
+height:1px;
+border:0;
+border-top:1px solid #94A596;/*PANTONE 5635 C*/
+margin:1em 0;
+padding:0;
+}
+input, select {
+vertical-align:middle;
+}
+/* Remove inner shadow from inputs on mobile iOS */
+textarea,
+input[type="text"],
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="text"]:active,
+input[type="submit"],
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="reset"],
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+outline: none;
+box-shadow: none;
+-webkit-border-radius: 0;
+border-radius: 0;
+border:none;
+background: none;
+cursor: pointer;
+}
+
+.sidebar-container {
+  position: fixed;
+  z-index: 999;
+  top: -100%;
+  /*right: 100%;*/
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  transition: top 1s cubic-bezier(0.3, 0.96, 0.27, 0.99);
+}
+.sidebar-container.active {
+  /*right: 0%;*/
+  top: 0%;
+}
+
+.sidebar-menu {
+  position: relative;
+  padding: 63px 10% 71px 10%;
+  height: 100%;
+}
+.sidebar-menu h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.sidebar-menu .menu {
+  text-align: center;
+  list-style: none;
+  margin: 5rem 0 5rem 0;
+  padding: 0 0 5rem 0;
+  position: relative;
+  top: 30%;
+  transform: translateY(-160px);
+}
+.sidebar-menu .menu .menu-item {
+  margin: 5rem 0 1px 0;
+}
+.sidebar-menu .menu .menu-item a {
+  display: inline-block;
+  position: relative;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.sidebar-menu .menu .menu-item a:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: attr(data-content);
+  display: inline-block;
+  color: white;
+  width: 100%;
+  clip: rect(0, 0, 370px, 0);
+  -webkit-transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms;
+  transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms;
+}
+.sidebar-menu .menu .menu-item a:hover {
+  color: #252640;
+}
+.sidebar-menu .menu .menu-item a:hover:before {
+  clip: rect(0, 370px, 370px, 0);
+}
+
+/*hamburger*/
+.sidebar-menu .hamburger {
+  position: absolute;
+  right: 8%;
+  top: 106%;
+  width: 30px;
+  cursor: pointer;
+  transition: right 1s cubic-bezier(0.3, 0.96, 0.27, 0.99);
+  z-index: 999;
+}
+.sidebar-menu .hamburger:hover .line-1,
+.sidebar-menu .hamburger:hover .line-2,
+.sidebar-menu .hamburger:hover .line-3 {
+  border-top: 1px solid #ddd;
+}
+.sidebar-menu .hamburger.active {
+  top: 6%;
+}
+.sidebar-menu .hamburger.active .line-1,
+.sidebar-menu .hamburger.active .line-2,
+.sidebar-menu .hamburger.active .line-3 {
+  background-color: #ddd;
+}
+.sidebar-menu .hamburger.active .line-1 {
+  transform: translateY(11px) rotate(45deg);
+  width: 30px;
+}
+.sidebar-menu .hamburger.active .line-2 {
+  opacity: 0;
+}
+.sidebar-menu .hamburger.active .line-3 {
+  transform: translateY(-11px) rotate(-45deg);
+  width: 30px;
+}
+.sidebar-menu .hamburger .line-1,
+.sidebar-menu .hamburger .line-2,
+.sidebar-menu .hamburger .line-3 {
+  width: 30px;
+}
+.sidebar-menu .hamburger:hover .line-1,
+.sidebar-menu .hamburger:hover .line-2,
+.sidebar-menu .hamburger:hover .line-3,
+.sidebar-menu .hamburger .line-1,
+.sidebar-menu .hamburger .line-2,
+.sidebar-menu .hamburger .line-3 {
+  display: block;
+  height: 1px;
+  margin: 0 0 10px 0;
+  transition: transform 1.5s cubic-bezier(0.3, 0.96, 0.27, 0.99), opacity 0.3s ease, width 0.3s ease;
+  background-color: #ddd;
+}
+
+
+.homepage-section {
+  height: 100vh;
+}
+
+.heading-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  clear: both;
+  box-sizing: border-box;
+  padding: 0 23px;
+}
+.heading-container .heading {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  float: left;
+  overflow: hidden;
+  border: 10px solid #252640;
+}
+.heading-container .heading div {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.heading-container .heading div:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: -15px;
+  background-color: #252640;
+}
+.heading-container .heading div svg {
+  width: 100%;
+  height: 100%;
+}
+.heading-container .heading video {
+  position: absolute;
+  width: 100%;
+  top: -25%;
+  z-index: -1;
+  box-sizing: border-box;
+  border: 5px solid red;
+}
+
+.what-we-do-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #ffb621;
+}
+
+.content-wrapper {
+  color: #252640;
+}
+.content-wrapper.right {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  bottom: 25px;
+  right: 25px;
+}
+.content-wrapper.left {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  bottom: 25px;
+  right: 50%;
+}
+.content-wrapper .content-rel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.content-wrapper .content .wwd {
+  font-size: 5vw;
+  transform: translateX(100px);
+  opacity: 0;
+  line-height: 1.5;
+  visibility: hidden;
+  transition: transform .5s ease, opacity .1s ease, visibility .5s .5s;
+}
+.content-wrapper .content .wwd.about {
+  font-size: 4vw;
+}
+.content-wrapper .content .wwd a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #252640;
+}
+.content-wrapper .content .wwd a:before {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  content: attr(data-content);
+  display: inline-block;
+  color: #f58daa;
+  width: 100%;
+  clip: rect(0, 700px, 0, 0);
+  -webkit-transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms;
+  transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms;
+}
+.content-wrapper .content .wwd a:first-of-type:before {
+  color: #acdaf2;
+}
+.content-wrapper .content .wwd a:last-of-type:before {
+  color: #80d8a8;
+}
+.content-wrapper .content .wwd a:hover:before {
+  clip: rect(0, 700px, 100px, 0);
+}
+.content-wrapper .content .wwd.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform .5s ease .7s, opacity .5s ease .7s, visibility .1s;
+}
+.content-wrapper .content.centered {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.block-heading {
+  position: fixed;
+  box-sizing: border-box;
+  padding: 0 25px;
+  top: 25px;
+  left: 25px;
+  right: 55%;
+  bottom: 25px;
+  background-color: #252640;
+  transform: translateX(-100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s ease, opacity 0.1s ease, visibility 0.5s 0.5s, left 1.2s cubic-bezier(0.78, 0.03, 0.18, 0.99), right 1.2s cubic-bezier(0.78, 0.03, 0.18, 0.99);
+}
+.block-heading.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.5s ease 0.1s, opacity 0.5s ease 0.1s, visibility 0.1s, left 1.2s cubic-bezier(0.78, 0.03, 0.18, 0.99), right 1.2s cubic-bezier(0.78, 0.03, 0.18, 0.99);
+}
+.block-heading.another {
+  top: 25px;
+  left: 55%;
+  right: 25px;
+  bottom: 25px;
+}
+.block-heading .section-block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.block-heading .heading {
+  opacity: 0;
+  font-family: "Arial Black", sans-serif !important;
+  font-size: 5vw;
+  color: #ffb621;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color .3s ease, opacity .3s ease, right .1s .6s ease;
+}
+.block-heading .heading.active {
+  opacity: 1;
+  transition: color .3s ease, opacity .3s  .6s ease;
+}
+.block-heading .heading .bigger {
+  font-size: 10vw;
+}
+
+
+/*ho sea style*/
+@font-face{font-family:'Noto Sans TC';font-style:normal;font-weight:100;src:url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format("woff2"),url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format("woff"),url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format("opentype");}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato','Noto Sans TC','PingFangSC-Thin','微軟正黑體','Microsoft JhengHei','Hiragino Kaku Gothic Pro W3','ヒラギノ角ゴ Pro W3','LiHei Pro','儷黑 Pro','Meiryo','メイリオ','微軟雅黑體','Microsoft YaHei',sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align:center;
+  vertical-align: middle;
+  opacity: 1;
+  background:#000 url("https://i.gifer.com/P79w.gif");
+  background-size: cover;
+  color: #eee;
+  overflow: hidden;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, label, input[type="text"], textarea, button {
+  font-size: 1.25rem;
+  line-height: 26px;
+  color: #eee;
+}
+h1,
+h2 {
+  margin: 0 0 5rem 0;
+  text-align: center;
+}
+@media (max-width: 576px) {
+html, body {
+  font-size: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, label, input[type="text"], textarea, button {
+  line-height: 17px;
+}
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page {
+  margin: 0 auto;
+  width: 568px;
+}
+@media (max-width: 576px) {
+.page {
+  padding: 63px 16% 71px 16%;
+  width: 100%;
+}
+}
+.outline,
+label,
+input[type="text"],
+textarea,
+button {
+  padding: 0 1px 2px 1px;
+  border: .1px solid #ddd;
+}
+.main {
+  height: 100vh;
+}
+.main .section {
+  width: 100%;
+  height: 100%;
+}
+.main .section:first-child h1 {
+  font-size: 2.5rem;
+  /*writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;*/
+}
+.main .section:first-child h1 span {
+  display: inline-block;
+  padding: 2px 1px;
+  line-height: 1;
+}
+.main .section:first-child p {
+  margin: 5rem 0 10rem 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  /*writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;*/
+}
+.main .section:nth-child(2) p:nth-child(2) {
+  margin: 2.5rem 0;
+}
+.main .section ul {
+  margin: 0 0 5rem 0;
+  padding: 0 0 5rem 0;
+}
+.main .section:nth-child(2) li {
+  margin: 1.25rem 0 1px 0;
+  font-size: 2.5rem;
+}
+.main .section:nth-child(2) li:first-child {
+  margin: 5rem 0 0 0;
+}
+.main .section:nth-child(3) p {
+  margin: 0 0 5rem 0;
+}
+.main .section:nth-child(3) p:nth-child(odd) {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.main .section:nth-child(3) p:nth-child(even) {
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main .section:nth-child(4) p:nth-child(1) {
+  line-height: 2;
+  margin: 0 0 5rem 0;
+}
+.main .section:nth-child(4) p:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.main .section:nth-child(4) p:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main .section:nth-child(5) {
+  text-align: left;
+}
+.main .section:nth-child(5) .page{
+  width: 358px;
+}
+.main .section:nth-child(5) form div {
+  margin: 0 0 1.25rem 0;
+}
+.main .section:nth-child(5) form input[type="text"],
+.main .section:nth-child(5) form textarea,
+.main .section:nth-child(5) form button {
+  background: rgba(255, 211, 255, 0.3);
+}
+.main .section:nth-child(5) form textarea {
+  width: 100%;
+  height: 30%;
+}
+.main .section:nth-child(5) form button {
+  background: none;
+}
+@media (max-width: 576px) {
+.main .section:nth-child(5) .page{
+  width: 100%;
+}
+.main .section:nth-child(5) form textarea {
+  max-width: 320px;
+}
+}
+.main .section:nth-child(6) ol {
+  overflow-y: scroll;
+}
+.main .section:nth-child(8) .page{
+  width: 502px;
+}
+@media (max-width: 576px) {
+.main .section:nth-child(8) .page{
+  width: 100%;
+}
+}
+.main .section:nth-child(8) span {
+  display: inline-block;
+  padding: 2px 1px;
+  line-height: 1;
+}
+.main .section:nth-child(8) .xl {
+  font-size: 2.5rem;
+}
+.main .section:nth-child(8) .t_a_r {
+  text-align: right;
+}
+.main .section:nth-child(8) .t_a_l {
+  text-align: left;
+}
+.main .section:nth-child(8) .wrap {
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main .section:nth-child(8) .wrap_l {
+  text-align: right;
+  /*display: flex;
+  flex-direction: row;
+  align-items: flex-start;*/
+}
+.main .section:nth-child(8) .wrap_r {
+  text-align: left;
+  /*display: flex;
+  flex-direction: row;
+  align-items: flex-end;*/
+}
+</style>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ --><script type="text/javascript"  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript"  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+  var hamb = $("#hamburger"),
+    sidebarContainer = $(".sidebar-container");
+
+  hamb.on("click", function () {
+    $(this).toggleClass("active");
+    sidebarContainer.toggleClass("active");
+  });
+
+  $(".main").onepage_scroll({
+    sectionContainer: ".section", // sectionContainer accepts any kind of selector in case you don't want to use section
+    easing: "cubic-bezier(.78,.03,.18,.99)", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+    animationTime: 1200, // AnimationTime let you define how long each section takes to animate
+    pagination: false, // You can either show or hide the pagination. Toggle true for show, false for hide.
+    updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+    beforeMove: function (index) {
+      $(".wwd").removeClass("active");
+      if (index == "1") {
+        $(".wwd").removeClass("active");
+        $(".block-heading").removeClass("active");
+        console.log("1");
+      }
+    }, // This option accepts a callback function. The function will be called before the page moves.
+    afterMove: function (index) {
+      if (index == "2") {
+        $(".block-heading").removeClass("another");
+        $(".wwd").addClass("active");
+        $(".block-heading").addClass("active");
+        console.log("2");
+        $(".block-heading .heading").removeClass("active");
+        $(".block-heading .heading.first").addClass("active");
+      }
+
+      if (index == "3") {
+        $(".wwd").addClass("active");
+        $(".block-heading").addClass("another");
+        console.log("3");
+        $(".block-heading .heading").removeClass("active");
+        $(".block-heading .heading.third").addClass("active");
+      }
+    }, // This option accepts a callback function. The function will be called after the page moves.
+    loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+    keyboard: true, // You can activate the keyboard controls
+    responsiveFallback: false, // You can fallback to normal page scroll by defining the width of the browser in which
+    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+    // the browser's width is less than 600, the fallback will kick in.
+    direction: "vertical" // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
+  });
+
+  // $('.menu-item a').click(function() {
+  //    $(".main").moveTo($(this).data('index'));
+  //    $(".main").moveTo(1);
+  // });
+  $('.p2').click(function() {
+     $(".main").moveTo(2);
+  });
+  $('.p4').click(function() {
+     $(".main").moveTo(4);
+  });
+  $('.p5').click(function() {
+     $(".main").moveTo(5);
+  });
+  $('.p6').click(function() {
+     $(".main").moveTo(6);
+  });
+  $('.p8').click(function() {
+     $(".main").moveTo(8);
+  });
+});
+</script>
+</head>
+<body>
+<div class="sidebar-container">
+  <div class="sidebar-menu">
+    <div id="hamburger" class="hamburger">
+      <span class="line-1"></span>
+      <span class="line-2"></span>
+      <span class="line-3"></span>
+    </div>
+    <h1>夢所</h1>
+    <ul class="menu">
+      <li class="menu-item"><a data-content="指南" data-target="4" class="p4"><span class="outline">指南</span></a></li>
+      <li class="menu-item"><a data-content="採集室" data-target="5" class="p5"><span class="outline">採集室</span></a></li>
+      <li class="menu-item"><a data-content="檔案館" data-target="6" class="p6"><span class="outline">檔案館</span></a></li>
+      <li class="menu-item"><a data-content="展訊" data-target="8" class="p8"><span class="outline">展訊</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="main" id="main">
+  <section class="section" data-index="1">
+    <div class="page">
+      <h1><span class="outline">夢<br>所</span></h1>
+      <p>河<br>海<br>製<br>作</p>
+      <a data-content="引言" data-target="2" class="p2"><span class="outline">ENTER</span></a>
+    </div>
+  </section>
+  <section class="section" data-index="2">
+    <div class="page">
+      <p>你好，我是何海 Sea Ho</p>
+      <p>邀請你進入夢所</p>
+      <p>讓我把夜晚的意識重新建構<br>將你的夢境衍生成為影像</p>
+      <ul>
+        <li><a data-content="指南" data-target="4" class="p4"><span class="outline">指南</span></a></li>
+        <li><a data-content="採集室" data-target="5" class="p5"><span class="outline">採集室</span></a></li>
+        <li><a data-content="檔案館" data-target="6" class="p6"><span class="outline">檔案館</span></a></li>
+        <li><a data-content="展訊" data-target="8" class="p8"><span class="outline">展訊</span></a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section" data-index="3">
+    <div class="page">
+      <p><span class="outline">白天的時候我們看不見夢</span>
+        <span class="outline">常把夢都忘光光了</span>
+        <span class="outline">只好努力記錄、讓文字代替我們留下</span>
+        <span class="outline">駐守在意識清醒之前的夜晚</span></p>
+      <p><span class="outline">於是我想造一夢所</span>
+        <span class="outline">把所有的夢陳列在這</span>
+        <span class="outline">不論怎麼樣奇幻的世界</span>
+        <span class="outline">都生成為情感意識的影像</span></p>
+      <p><span class="outline">經過搜集夢境的內容</span>
+        <span class="outline">將文字交轉化成影像</span>
+        <span class="outline">讓我為你作個好夢</span></p>
+    </div>
+  </section>
+  <section class="section" data-index="4">
+    <div class="page">
+      <p>夢所畫分為兩大區域
+        <br>採集、陳列
+        <br>請點選進入</p>
+      <p><span class="outline">COLLECT</span>
+        <span class="outline">採集室</span>
+        <span class="outline">搜集夢境</span>
+        <span class="outline">寫下你做過的夢</span></p>
+      <p><span class="outline">DISPLAY</span>
+        <span class="outline">檔案館</span>
+        <span class="outline">陳列擺放參與者的夢境產物</span></p>
+    </div>
+  </section>
+
+  <section class="section" data-index="5">
+    <div class="page">
+      <h2><span class="outline">採集室</span></h2>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.alert('我們將儘速回覆。');window.location='index.html'}"></iframe>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-oXZ6SeYjKc74EWXsZ9LnwmWC4uqk39jzVhEMr0-UlwiDAw/formResponse" target="_self" method="POST" id="mG61Hd">
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="1515626317">
+                  <label>我是</label>
+                    <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="我是" aria-describedby="i.desc.1515626317 i.err.1515626317" name="entry.1482041690" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="SaeHo">
+                          <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
+                        <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
+                    </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.1515626317" role="alert"></div>
+                </div>
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="501630917">
+                  <label>夢的戳記</label>
+                    <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="夢的戳記" aria-describedby="i.desc.501630917 i.err.501630917" name="entry.894947293" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="2019/04/08">
+                          <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
+                        <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
+                    </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.501630917" role="alert"></div>
+                </div>
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="2145830796">
+                  <label>我的夢</label>
+                  <div class="quantumWizTextinputPapertextareaEl modeLight freebirdFormviewerViewItemsTextLongText freebirdThemedInput" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                        <textarea class="quantumWizTextinputPapertextareaInput exportTextarea" jsname="YPqjbf" data-rows="1" tabindex="0" aria-label="我的夢" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.1643603816" dir="auto" data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2145830796 i.err.2145830796" placeholder="那天下雨
+我和你在一起
+你哭了
+我擁抱你
+然後幫你穿上雨鞋
+一起撐傘出門"></textarea>
+                      <div jsname="XmnwAc" class="quantumWizTextinputPapertextareaFocusUnderline exportFocusUnderline"></div>
+                      <div jsname="ty6ygf" class="quantumWizTextinputPapertextareaHint exportHint"></div>
+                  </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.2145830796" role="alert"></div>
+                </div>
+            <div class="freebirdFormviewerViewNavigationNavControls" jscontroller="lSvzH" jsaction="rcuQ6b:npT2md;JIbuQc:Gl574d(QR6bsb),V3upec(GeGHKb),HiUbje(M2UYVd),NPBnCf(OCpkoe);"data-shuffle-seed="9004433135701413979" data-should-execute-invisible-captcha-challenge="false" data-is-receipt-checked="false">
+                  <div role="button" class="appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventMouseEvents=true|preventDefault=true); touchcancel:JMtRjd;focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;" jsshadow="" jsname="M2UYVd" aria-disabled="false" tabindex="0">
+                    <span jsslot="" class="appsMaterialWizButtonPaperbuttonContent exportButtonContent">
+                      <button class="appsMaterialWizButtonPaperbuttonLabel quantumWizButtonPaperbuttonLabel exportLabel" type="submit">送出</button>
+                    </span>
+                  </div>
+            </div>
+            <input type="hidden" name="fvv" value="1" />
+            <input type="hidden" name="draftResponse" value='[null,null,"9004433135701413979"]' />
+            <input type="hidden" name="pageHistory" value="0" />
+            <input type="hidden" name="fbzx" value="9004433135701413979" />
+      </form>
+    </div>
+  </section>
+
+  <section class="section" data-index="6">
+    <div class="page">
+      <h2><span class="outline">檔案館</span><span class="outline">目錄</span></h2>
+      <!-- overflow-y:scroll; -->
+      <ol>
+        <li>2018/02/15 子水</li>
+        <li>2019/12/14 尼莫</li>
+        <li>2018/03/31 Dabi.Liu</li>
+        <li>2018/02/15 子水</li>
+        <li>2019/12/14 Audrey Huang</li>
+        <li>2018/03/31 MiuMiu</li>
+        <li>2018/02/15 海倫寶貝</li>
+        <li>2019/12/14 尼莫</li>
+        <li>2018/03/31 Dabi.Liu</li>
+        <li>2018/02/15 喵喵大師</li>
+        <li>2019/12/14 尼莫
+        <li>2018/03/31 Dabi.Liu</li>
+        <li>2018/02/15 子水</li>
+        <li>2019/12/14 尼莫</li>
+        <li>2018/03/31 Dabi.Liu</li>
+        <li>2018/02/15 子水</li>
+        <li>2019/12/14 尼莫</li>
+        <li>2018/03/31 Dabi.Liu</li>
+        <li>2018/02/15 子水</li>
+        <li>2019/12/14 尼莫</li>
+      </ol>
+    </div>
+  </section>
+  <section class="section" data-index="7">
+    <div class="page">
+      <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
+      <div>文字方塊？</div>
+      <h4>2018/02/23 子水</h4>
+      <h3>夏天.溪水.飛</h3>
+      <div>
+        <a href="#"><span class="outline">前一夜</span></a>
+        <a href="#"><span class="outline">目錄</span></a>
+        <a href="#"><span class="outline">後一夜</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-index="8">
+    <div class="page">
+      <h2><span class="outline">展訊</span></h2>
+      <div class="wrap">
+        <div class="wrap_l">
+          <span class="outline xl">傳達</span>
+        </div>
+        <div class="wrap_r">
+          <span class="outline xl">COMMUNICATIONs</span>
+        </div>
+      </div>
+      <div class="wrap" style="justify-content: flex-end;">
+        <div class="wrap_r">
+          <p><span class="outline">實踐大學</span><br><span class="outline">媒體傳達設計學系</span><br><span class="outline">2O2O</span><br><span class="outline">SHIH CHIEN UNIVERSITY</span><br><span class="outline">DEPARTMENT OF</span></p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="wrap_l">
+          <p><span class="outline xl">何海</span><br><span class="outline xl">Sea Ho</span><br><span class="outline">聯絡方式</span><br><span class="outline"><a href="https://www.instagram.com/hh.0401">instagram<br>@seaho.0401</a></span></p>
+        </div>
+        <div class="wrap_r">
+          <p><span class="outline">二〇二〇</span><br><span class="outline">畢業展</span><br><span class="outline">GRADUATION</span><br><span class="outline">EXHIBITION</span></p>
+        </div>
+      </div>
+      <div class="wrap" style="justify-content: flex-end;">
+        <div class="wrap_r">
+          <p><span class="outline xl">展覽</span><span class="outline">資訊</span></p>
+          <p><span class="outline">instagram<br>@2020sccd_communications</span></p>
+          <p><span class="outline">Facebook<br>2020 實踐大學媒體傳達設計學系所|<br>傳達:COMMUNICATIONs</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- <div class="block-heading">
+  <div class="container-block">
+    <h2 class="heading active first">WHAT WE<br /> <span class="bigger">DO</span></h2>
+    <h2 class="heading third">ABOUT<br /> <span class="bigger">US</span></h2>
+  </div>
+</div> -->
+<script type="text/javascript" nonce="">
+var FB_PUBLIC_LOAD_DATA_ = [null, [null, [
+    [1515626317, "我是", null, 0, [
+        [1482041690, null, 1]
+    ]],
+    [501630917, "夢的戳記", null, 0, [
+        [894947293, null, 1]
+    ]],
+    [2145830796, "我的夢", null, 1, [
+        [1643603816, null, 1]
+    ]]
+], null, null, null, null, null, null, null, 48, null, null, null, null, null, [2]], "/forms", "夢所", null, null, null, "0", null, 0, 0, "", "", 0, "e/1FAIpQLSd-oXZ6SeYjKc74EWXsZ9LnwmWC4uqk39jzVhEMr0-UlwiDAw", 1, "[{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"applicationFonts\",\"6\"],\"state\":{\"hashValue\":\"00000000\"}},{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"domainFonts\",\"0\"],\"state\":{\"hashValue\":\"00000000\"}},{\"data\":{\"familyList\":[\"Lato\"],\"recentlyUsedFamilyList\":[\"Arial\",\"Microsoft JhengHei\",\"BiauKai\",\"LiHei Pro\",\"Times New Roman\",\"Courier New\",\"Impact\",\"Trebuchet MS\",\"Verdana\"],\"transitionedFamilyList\":[\"Lato\"],\"hasTransitioned\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-fonts\"],\"state\":{\"timestamp\":1578461985524615}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_dc\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_st\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_sth\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"chartImport\":true,\"revisionHistoryModeNamedRevisions\":true,\"blameLaunch\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-global_promos\",\"0\"],\"state\":{\"timestamp\":1563258745565908}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"mae-show_addons_menu_promo\"],\"state\":{\"timestamp\":1529939567476561}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-aips\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-asp\",\"6\"],\"state\":{\"timestamp\":1563258745565908}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-ftbdct\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dbs\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"5\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"1\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"6\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-ht\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-wws\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":1437372269957},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-etg-lvt\"],\"state\":{\"timestamp\":1437372269969588}},{\"data\":{\"viewMode\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"3\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":1},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"1\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":1},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"6\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"5\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-screenreader\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-enable_braille\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-mute_collaborators\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_chooser\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_link_form_promo\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_whats_new\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-expand_dasher_options\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"proto\":\"[1,3]\\n\"},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-auto_create_sink\"],\"state\":{\"timestamp\":1479292068378449}},{\"data\":{\"proto\":\"[3]\\n\"},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-ui_version\"],\"state\":{\"timestamp\":1495800084635353}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-questions_required_by_default\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-collect_usernames_by_default\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-default_point_value\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_assessments_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-autovalidate_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_qxq_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_braveheart_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_manual_grading_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_record_view_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_brain_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-has_seen_braveheart_theme_warning\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_custom_themes_toast\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_edu_bundle_18_toast\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_quizzes_intro\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_intro_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_add_a_step_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_new_step_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_question_import_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_locked_mode_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_draft_responses_modal\"],\"state\":{\"timestamp\":1589103125176209}}]", 1];
+</script>
+</body>
+</html>
