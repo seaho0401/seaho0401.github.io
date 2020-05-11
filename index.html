@@ -438,8 +438,8 @@ html, body {
   text-align:center;
   vertical-align: middle;
   opacity: 1;
-  background:#000 url("https://i.gifer.com/P79w.gif");
-  background-size: cover;
+  /*background:#000 url("https://i.gifer.com/P79w.gif");
+  background-size: cover;*/
   color: #eee;
   overflow: hidden;
 }
@@ -624,12 +624,41 @@ button {
   flex-direction: row;
   align-items: flex-end;*/
 }
+
+.vimeo-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+   overflow: hidden;
+}
+.vimeo-wrapper iframe {
+   width: 100vw;
+   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
 </style>
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
  --><script type="text/javascript"  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript"  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.js"></script>
 <script type="text/javascript">
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#ChromeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+
 jQuery(document).ready(function ($) {
   var hamb = $("#hamburger"),
     sidebarContainer = $(".sidebar-container");
@@ -703,6 +732,12 @@ jQuery(document).ready(function ($) {
 </script>
 </head>
 <body>
+<!-- <div class="vimeo-wrapper"><iframe title="vimeo-player" src="https://player.vimeo.com/video/417266192?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> -->
+<iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/818216356&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="display: none"></iframe>
+<!-- <iframe src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" allow="autoplay" style="display: none" id="ChromeAudio"></iframe>
+<audio autoplay loop style="display: none" id="playAudio">
+  <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
+</audio> -->
 <div class="sidebar-container">
   <div class="sidebar-menu">
     <div id="hamburger" class="hamburger">
@@ -853,7 +888,7 @@ jQuery(document).ready(function ($) {
   <section class="section" data-index="7">
     <div class="page">
       <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
-      <div>文字方塊？</div>
+      <div></div>
       <h4>2018/02/23 子水</h4>
       <h3>夏天.溪水.飛</h3>
       <div>
