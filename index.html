@@ -544,13 +544,23 @@ button {
 }
 .main .section:nth-child(4) p:nth-child(2) {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
 }
 .main .section:nth-child(4) p:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.main .section:nth-child(4) p:nth-child(4) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.main .section:nth-child(4) p:nth-child(5) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .main .section:nth-child(5) {
   text-align: left;
@@ -597,8 +607,9 @@ button {
   padding: 2px 1px;
   line-height: 1;
 }
-.main .section:nth-child(8) .xl {
+.xl {
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 .main .section:nth-child(8) .t_a_r {
   text-align: right;
@@ -759,7 +770,7 @@ jQuery(document).ready(function ($) {
   <section class="section" data-index="1">
     <div class="page">
       <h1><span class="outline">夢<br>所</span></h1>
-      <p>河<br>海<br>製<br>作</p>
+      <p>何<br>海<br>製<br>作</p>
       <a data-content="引言" data-target="2" class="p2"><span class="outline">ENTER</span></a>
     </div>
   </section>
@@ -797,12 +808,12 @@ jQuery(document).ready(function ($) {
         <br>採集、陳列
         <br>請點選進入</p>
       <p><span class="outline">COLLECT</span>
-        <span class="outline">採集室</span>
-        <span class="outline">搜集夢境</span>
+        <a data-content="採集室" data-target="5" class="p5"><span class="outline xl">採集室</span></a></p>
+      <p><span class="outline">搜集夢境</span>
         <span class="outline">寫下你做過的夢</span></p>
       <p><span class="outline">DISPLAY</span>
-        <span class="outline">檔案館</span>
-        <span class="outline">陳列擺放參與者的夢境產物</span></p>
+        <a data-content="檔案館" data-target="6" class="p6"><span class="outline xl">檔案館</span></a></p>
+      <p><span class="outline">陳列擺放參與者的夢境產物</span></p>
     </div>
   </section>
 
@@ -814,7 +825,7 @@ jQuery(document).ready(function ($) {
                 <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="1515626317">
                   <label>我是</label>
                     <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
-                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="我是" aria-describedby="i.desc.1515626317 i.err.1515626317" name="entry.1482041690" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="SaeHo">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="我是" aria-describedby="i.desc.1515626317 i.err.1515626317" name="entry.1482041690" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="SeaHo">
                           <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
                         <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
                     </div>
@@ -823,7 +834,7 @@ jQuery(document).ready(function ($) {
                 <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="501630917">
                   <label>夢的戳記</label>
                     <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
-                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="夢的戳記" aria-describedby="i.desc.501630917 i.err.501630917" name="entry.894947293" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="2019/04/08">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="夢的戳記" aria-describedby="i.desc.501630917 i.err.501630917" name="entry.894947293" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="2019/06/08">
                           <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
                         <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
                     </div>
@@ -832,12 +843,12 @@ jQuery(document).ready(function ($) {
                 <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="2145830796">
                   <label>我的夢</label>
                   <div class="quantumWizTextinputPapertextareaEl modeLight freebirdFormviewerViewItemsTextLongText freebirdThemedInput" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
-                        <textarea class="quantumWizTextinputPapertextareaInput exportTextarea" jsname="YPqjbf" data-rows="1" tabindex="0" aria-label="我的夢" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.1643603816" dir="auto" data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2145830796 i.err.2145830796" placeholder="那天下雨
-我和你在一起
-你哭了
-我擁抱你
-然後幫你穿上雨鞋
-一起撐傘出門"></textarea>
+                        <textarea class="quantumWizTextinputPapertextareaInput exportTextarea" jsname="YPqjbf" data-rows="1" tabindex="0" aria-label="我的夢" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.1643603816" dir="auto" data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2145830796 i.err.2145830796" placeholder="一棟很高很高的飯店
+跟很久之前的某個夢是同個地點
+我其實忘記我上次都做了什麼
+這次我帶著身邊的誰
+你想吃東西、我就很熟悉的牽著你走
+你是個女孩，但我忘記你的樣子了"></textarea>
                       <div jsname="XmnwAc" class="quantumWizTextinputPapertextareaFocusUnderline exportFocusUnderline"></div>
                       <div jsname="ty6ygf" class="quantumWizTextinputPapertextareaHint exportHint"></div>
                   </div>
