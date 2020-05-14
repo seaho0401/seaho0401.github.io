@@ -2,9 +2,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>夢所</title>
+<title> 夢所 </title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
 <style>
 html, body, div, span, applet, object, iframe,
@@ -58,6 +57,7 @@ q:before, q:after {
 content:'';
 content:none;
 }
+a,
 a:link,
 a:visited,
 a:hover,
@@ -70,6 +70,7 @@ background:transparent;
 text-decoration:none;
 color: inherit;
 cursor: pointer;
+background: rgba(255, 211, 255, 0.3);
 }
 /* change colours to suit your needs */
 ins {
@@ -111,6 +112,7 @@ input, select {
 vertical-align:middle;
 }
 /* Remove inner shadow from inputs on mobile iOS */
+textarea,
 input[type="text"],
 input[type="text"]:hover,
 input[type="text"]:focus,
@@ -134,7 +136,6 @@ border:none;
 background: none;
 cursor: pointer;
 }
-
 
 .sidebar-container {
   position: fixed;
@@ -163,14 +164,14 @@ cursor: pointer;
 .sidebar-menu .menu {
   text-align: center;
   list-style: none;
-  margin: 0;
-  padding: 0 0 1px 0;
+  margin: 5rem 0 5rem 0;
+  padding: 0 0 5rem 0;
   position: relative;
-  top: 40%;
-  transform: translateY(-213px);
+  top: 30%;
+  transform: translateY(-160px);
 }
 .sidebar-menu .menu .menu-item {
-  margin: 5rem 0 0 0;
+  margin: 5rem 0 1px 0;
 }
 .sidebar-menu .menu .menu-item a {
   display: inline-block;
@@ -433,7 +434,7 @@ cursor: pointer;
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato','Noto Sans TC','PingFangSC-Thin','微軟正黑體','Microsoft JhengHei','Hiragino Kaku Gothic Pro W3','ヒラギノ角ゴ Pro W3','LiHei Pro','儷黑 Pro','Meiryo','メイリオ','微軟雅黑體','Microsoft YaHei',sans-serif;
+  font-family: 'Lato','Noto Sans TC','PingFangSC-Thin',' 微軟正黑體','Microsoft JhengHei','Hiragino Kaku Gothic Pro W3',' ヒラギノ角ゴ Pro W3','LiHei Pro',' 儷黑 Pro','Meiryo',' メイリオ',' 微軟雅黑體','Microsoft YaHei',sans-serif;
   font-size: 16px;
   line-height: 1.4;
   text-align:center;
@@ -448,6 +449,11 @@ html, body {
   font-size: 1.25rem;
   line-height: 26px;
   color: #eee;
+}
+h1,
+h2 {
+  margin: 0 0 5rem 0;
+  text-align: center;
 }
 @media (max-width: 576px) {
 html, body {
@@ -487,9 +493,6 @@ button {
   width: 100%;
   height: 100%;
 }
-/*.main .section:first-child {
-  background: #222;
-}*/
 .main .section:first-child h1 {
   font-size: 2.5rem;
   /*writing-mode: vertical-lr;
@@ -509,24 +512,19 @@ button {
   -webkit-writing-mode: vertical-lr;
   -ms-writing-mode: vertical-lr;*/
 }
-
-/*.main .section:nth-child(2) {
-  background: #000;
-}*/
 .main .section:nth-child(2) p:nth-child(2) {
   margin: 2.5rem 0;
 }
+.main .section ul {
+  margin: 0 0 5rem 0;
+}
 .main .section:nth-child(2) li {
-  margin: 1.25rem 0 0 0;
+  margin: 1.25rem 0 1px 0;
   font-size: 2.5rem;
 }
 .main .section:nth-child(2) li:first-child {
   margin: 5rem 0 0 0;
 }
-
-/*.main .section:nth-child(3) {
-  background: #222;
-}*/
 .main .section:nth-child(3) p {
   margin: 0 0 5rem 0;
 }
@@ -542,41 +540,51 @@ button {
   flex-direction: column;
   align-items: flex-start;
 }
-/*.main .section:nth-child(4) {
-  background: #000;
-}*/
 .main .section:nth-child(4) p:nth-child(1) {
   line-height: 2;
   margin: 0 0 5rem 0;
 }
 .main .section:nth-child(4) p:nth-child(2) {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
 }
 .main .section:nth-child(4) p:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
+.main .section:nth-child(4) p:nth-child(4) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.main .section:nth-child(4) p:nth-child(5) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .main .section:nth-child(5) {
-  /*background: #222;*/
   text-align: left;
 }
 .main .section:nth-child(5) .page{
   width: 358px;
 }
-.main .section:nth-child(5) h2 {
-  margin: 0 0 5rem 0;
-  text-align: center;
-}
 .main .section:nth-child(5) form div {
   margin: 0 0 1.25rem 0;
+}
+.main .section:nth-child(5) form input[type="text"],
+.main .section:nth-child(5) form textarea,
+.main .section:nth-child(5) form button {
+  background: rgba(255, 211, 255, 0.3);
 }
 .main .section:nth-child(5) form textarea {
   width: 100%;
   height: 30%;
+}
+.main .section:nth-child(5) form button {
+  background: none;
 }
 @media (max-width: 576px) {
 .main .section:nth-child(5) .page{
@@ -586,16 +594,9 @@ button {
   max-width: 320px;
 }
 }
-
-/*.main .section:nth-child(6) {
-  background: #000;
-}*/
-/*.main .section:nth-child(7) {
-  background: #222;
-}*/
-/*.main .section:nth-child(8) {
-  background: #000;
-}*/
+.main .section:nth-child(6) ol {
+  overflow-y: scroll;
+}
 .main .section:nth-child(8) .page{
   width: 502px;
 }
@@ -609,8 +610,9 @@ button {
   padding: 2px 1px;
   line-height: 1;
 }
-.main .section:nth-child(8) .xl {
+.xl {
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 .main .section:nth-child(8) .t_a_r {
   text-align: right;
@@ -636,12 +638,79 @@ button {
   flex-direction: row;
   align-items: flex-end;*/
 }
+/*.vimeo-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+   overflow: hidden;
+}
+.vimeo-wrapper iframe {
+   width: 100vw;
+   height: 56.25vw;
+   min-height: 100vh;
+   min-width: 177.77vh;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}*/
+/* height Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+/* min-width Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+
+/*#video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  background-color: #a1a1a1;
+}
+
+#video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #010101;
+}
+
+#video-order {
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 1000ms ease;
+  transition: opacity 1000ms ease;
+}
+#video-order.show {
+  opacity: 1;
+}
+#video-controls ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#video-controls ul li {
+  display: inline-block;
+}*/
 </style>
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
  --><script type="text/javascript"  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript"  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.js"></script>
 <script type="text/javascript">
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#ChromeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+
 jQuery(document).ready(function ($) {
   var hamb = $("#hamburger"),
     sidebarContainer = $(".sidebar-container");
@@ -712,9 +781,22 @@ jQuery(document).ready(function ($) {
      $(".main").moveTo(8);
   });
 });
+
+
+$(document).ready(function(){
+  $(".dream").click(function(){
+    $("source").html("http://instagram.com/p/B-UGnLwnJUf/embed");
+  });
+});
 </script>
 </head>
 <body>
+<!-- <div class="vimeo-wrapper"><iframe title="vimeo-player" src="https://player.vimeo.com/video/417266192?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> -->
+<iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/818216356&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="display: none"></iframe>
+<!-- <iframe src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" allow="autoplay" style="display: none" id="ChromeAudio"></iframe>
+<audio autoplay loop style="display: none" id="playAudio">
+  <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
+</audio> -->
 <div class="sidebar-container">
   <div class="sidebar-menu">
     <div id="hamburger" class="hamburger">
@@ -722,20 +804,291 @@ jQuery(document).ready(function ($) {
       <span class="line-2"></span>
       <span class="line-3"></span>
     </div>
-    <h1>夢所</h1>
+    <h1> 夢所 </h1>
     <ul class="menu">
-      <li class="menu-item"><a data-content="指南" data-target="4" class="p4"><span class="outline">指南</span></a></li>
-      <li class="menu-item"><a data-content="採集室" data-target="5" class="p5"><span class="outline">採集室</span></a></li>
-      <li class="menu-item"><a data-content="檔案館" data-target="6" class="p6"><span class="outline">檔案館</span></a></li>
-      <li class="menu-item"><a data-content="展訊" data-target="8" class="p8"><span class="outline">展訊</span></a></li>
+      <li class="menu-item"><a data-content=" 指南 "  data-target="4" class="p4"><span class="outline"> 指南 </span></a></li>
+      <li class="menu-item"><a data-content=" 採集室 "  data-target="5" class="p5"><span class="outline"> 採集室 </span></a></li>
+      <li class="menu-item"><a data-content=" 檔案館 "  data-target="6" class="p6"><span class="outline"> 檔案館 </span></a></li>
+      <li class="menu-item"><a data-content=" 展訊 "  data-target="8" class="p8"><span class="outline"> 展訊 </span></a></li>
     </ul>
   </div>
 </div>
 <div class="main" id="main">
-  <section class="section" data-index="1">
-    <iframe src="http://instagram.com/p/B-UGnLwnJUf/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  <section class="section" data-index="1"></section>
+  <section class="section" data-index="2"></section>
+  <section class="section" data-index="3"></section>
+  <section class="section" data-index="4"></section>
+  <section class="section" data-index="5">
+    <div class="page">
+      <h2><span class="outline"> 採集室 </span></h2>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function (){window.alert (' 我們將儘速回覆。');window.location='index.html'}"></iframe>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-oXZ6SeYjKc74EWXsZ9LnwmWC4uqk39jzVhEMr0-UlwiDAw/formResponse" target="_self" method="POST" id="mG61Hd">
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="1515626317">
+                  <label> 我是 </label>
+                    <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label=" 我是 "  aria-describedby="i.desc.1515626317 i.err.1515626317" name="entry.1482041690" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="SeaHo">
+                          <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
+                        <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
+                    </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.1515626317" role="alert"></div>
+                </div>
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="501630917">
+                  <label> 夢的戳記 </label>
+                    <div class="quantumWizTextinputPaperinputEl freebirdFormviewerViewItemsTextShortText freebirdThemedInput modeLight" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                            <input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label=" 夢的戳記 "  aria-describedby="i.desc.501630917 i.err.501630917" name="entry.894947293" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value=""/ placeholder="2019/06/08">
+                          <div jsname="XmnwAc" class="quantumWizTextinputPaperinputFocusUnderline exportFocusUnderline"></div>
+                        <div jsname="ty6ygf" class="quantumWizTextinputPaperinputHint exportHint"></div>
+                    </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.501630917" role="alert"></div>
+                </div>
+                <div role="listitem" class="freebirdFormviewerViewItemsItemItem freebirdFormviewerViewItemsTextTextItem" jsname="ibnC6b" jscontroller="rDGJeb" jsaction="sPvj8e:e4JwSe,Dlbleb;O22p3e:e4JwSe,F0zejc;" data-required="true" data-item-id="2145830796">
+                  <label> 我的夢 </label>
+                  <div class="quantumWizTextinputPapertextareaEl modeLight freebirdFormviewerViewItemsTextLongText freebirdThemedInput" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="W85ice">
+                        <textarea class="quantumWizTextinputPapertextareaInput exportTextarea" jsname="YPqjbf" data-rows="1" tabindex="0" aria-label=" 我的夢 "  jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.1643603816" dir="auto" data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2145830796 i.err.2145830796" placeholder=" 一棟很高很高的飯店
+跟很久之前的某個夢是同個地點
+我其實忘記我上次都做了什麼
+這次我帶著身邊的誰
+你想吃東西、我就很熟悉的牽著你走
+你是個女孩，但我忘記你的樣子了 " ></textarea>
+                      <div jsname="XmnwAc" class="quantumWizTextinputPapertextareaFocusUnderline exportFocusUnderline"></div>
+                      <div jsname="ty6ygf" class="quantumWizTextinputPapertextareaHint exportHint"></div>
+                  </div>
+                  <div jsname="XbIQze" class="freebirdFormviewerViewItemsItemErrorMessage" id="i.err.2145830796" role="alert"></div>
+                </div>
+            <div class="freebirdFormviewerViewNavigationNavControls" jscontroller="lSvzH" jsaction="rcuQ6b:npT2md;JIbuQc:Gl574d(QR6bsb),V3upec(GeGHKb),HiUbje(M2UYVd),NPBnCf(OCpkoe);"data-shuffle-seed="9004433135701413979" data-should-execute-invisible-captcha-challenge="false" data-is-receipt-checked="false">
+                  <div role="button" class="appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventMouseEvents=true|preventDefault=true); touchcancel:JMtRjd;focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;" jsshadow="" jsname="M2UYVd" aria-disabled="false" tabindex="0">
+                    <span jsslot="" class="appsMaterialWizButtonPaperbuttonContent exportButtonContent">
+                      <button class="appsMaterialWizButtonPaperbuttonLabel quantumWizButtonPaperbuttonLabel exportLabel" type="submit"> 送出 </button>
+                    </span>
+                  </div>
+            </div>
+            <input type="hidden" name="fvv" value="1" />
+            <input type="hidden" name="draftResponse" value='[null,null,"9004433135701413979"]' />
+            <input type="hidden" name="pageHistory" value="0" />
+            <input type="hidden" name="fbzx" value="9004433135701413979" />
+      </form>
+    </div>
+  </section>
+  <section class="section" data-index="6">
+    <div class="page">
+      <h2><span class="outline"> 檔案館 </span><span class="outline"> 目錄 </span></h2>
+      <!-- overflow-y:scroll; -->
+      <ol>
+        <li class="dream">2018/02/15 子水 </li>
+        <li class="dream">2019/12/14 尼莫 </li>
+        <li class="dream">2018/03/31 Dabi.Liu</li>
+        <li class="dream">2018/02/15 子水 </li>
+        <li class="dream">2019/12/14 Audrey Huang</li>
+        <li class="dream">2018/03/31 MiuMiu</li>
+        <li class="dream">2018/02/15 海倫寶貝 </li>
+        <li class="dream">2019/12/14 尼莫 </li>
+        <li class="dream">2018/03/31 Dabi.Liu</li>
+        <li class="dream">2018/02/15 喵喵大師 </li>
+        <li class="dream">2019/12/14 尼莫
+        <li class="dream">2018/03/31 Dabi.Liu</li>
+        <li class="dream">2018/02/15 子水 </li>
+        <li class="dream">2019/12/14 尼莫 </li>
+        <li class="dream">2018/03/31 Dabi.Liu</li>
+        <li class="dream">2018/02/15 子水 </li>
+        <li class="dream">2019/12/14 尼莫 </li>
+        <li class="dream">2018/03/31 Dabi.Liu</li>
+        <li class="dream">2018/02/15 子水 </li>
+        <li class="dream">2019/12/14 尼莫 </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section" data-index="7">
+    <div class="page">
+      <h2><span class="outline"> 檔案館 </span><span class="outline"> 夢 </span></h2>
+      <div>
+        <video controls autoplay name="media" style="height:568px;">
+          <source src="https://instagram.ftpe7-1.fna.fbcdn.net/v/t50.16885-16/10000000_529236901102774_2729162006140258637_n.mp4?_nc_ht=instagram.ftpe7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=J2mCw_LSlpMAX-IZ1zR&oe=5EBF3482&oh=c8df35c32d0f0cc610d96e1e05224fd5" type="video/mp4">
+        </video>
+        <script src="https://api.feebee.com.tw/ext/v1/enable_plugin.php?url=https%3A%2F%2Finstagram.ftpe7-1.fna.fbcdn.net%2Fv%2Ft50.16885-16%2F10000000_529236901102774_2729162006140258637_n.mp4%3F_nc_ht%3Dinstagram.ftpe7-1.fna.fbcdn.net%26_nc_cat%3D110%26_nc_ohc%3DJ2mCw_LSlpMAX-IZ1zR%26oe%3D5EBF3482%26oh%3Dc8df35c32d0f0cc610d96e1e05224fd5" defer=""></script>
+        <!-- <iframe src="http://instagram.com/p/B-UGnLwnJUf/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe> -->
+        <!-- <iframe src="http://instagram.com/p/B_zHQ2JHIZu/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="false"></iframe> -->
+      </div>
+      <h4>2018/02/23 子水 </h4>
+      <h3> 夏天。溪水。飛 </h3>
+      <div>
+        <a href="#"><span class="outline"> 前一夜 </span></a>
+        <a href="#"><span class="outline"> 目錄 </span></a>
+        <a href="#"><span class="outline"> 後一夜 </span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" data-index="8">
+<div id="video-wrapper">
+  <video controls autoplay style="height:568px;"><source id="video-player" type="video/mp4"></video>
+    <script src="https://api.feebee.com.tw/ext/v1/enable_plugin.php?url=https%3A%2F%2Finstagram.ftpe7-1.fna.fbcdn.net%2Fv%2Ft50.16885-16%2F10000000_529236901102774_2729162006140258637_n.mp4%3F_nc_ht%3Dinstagram.ftpe7-1.fna.fbcdn.net%26_nc_cat%3D110%26_nc_ohc%3DJ2mCw_LSlpMAX-IZ1zR%26oe%3D5EBF3482%26oh%3Dc8df35c32d0f0cc610d96e1e05224fd5" defer=""></script>
+</div>
+<div id="video-order"></div>
+<div id="video-controls">
+  <ul>
+    <li><a href="#" id="toggle-video">Play</a></li>
+    <li><a href="#" id="play-previous-video">Previous</a></li>
+    <li><a href="#" id="play-next-video">Next</a></li>
+  </ul>
+</div>
+<div id="video-playlist"></div>
+
   </section>
 </div>
-<iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/p/B-UGnLwnJUf/embed/captioned/?cr=1&amp;v=12&amp;wp=608&amp;rd=https%3A%2F%2Fwordpress.com&amp;rp=%2Fsupport%2Finstagram%2F#%7B%22ci%22%3A0%2C%22os%22%3A3327.5399999984074%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="300" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 658px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+<!-- <div class="block-heading">
+  <div class="container-block">
+    <h2 class="heading active first">WHAT WE<br /> <span class="bigger">DO</span></h2>
+    <h2 class="heading third">ABOUT<br /> <span class="bigger">US</span></h2>
+  </div>
+</div> -->
+<script type="text/javascript" nonce="">
+var FB_PUBLIC_LOAD_DATA_ = [null, [null, [
+    [1515626317, "我是", null, 0, [
+        [1482041690, null, 1]
+    ]],
+    [501630917, "夢的戳記", null, 0, [
+        [894947293, null, 1]
+    ]],
+    [2145830796, "我的夢", null, 1, [
+        [1643603816, null, 1]
+    ]]
+], null, null, null, null, null, null, null, 48, null, null, null, null, null, [2]], "/forms", "夢所", null, null, null, "0", null, 0, 0, "", "", 0, "e/1FAIpQLSd-oXZ6SeYjKc74EWXsZ9LnwmWC4uqk39jzVhEMr0-UlwiDAw", 1, "[{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"applicationFonts\",\"6\"],\"state\":{\"hashValue\":\"00000000\"}},{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"domainFonts\",\"0\"],\"state\":{\"hashValue\":\"00000000\"}},{\"data\":{\"familyList\":[\"Lato\"],\"recentlyUsedFamilyList\":[\"Arial\",\"Microsoft JhengHei\",\"BiauKai\",\"LiHei Pro\",\"Times New Roman\",\"Courier New\",\"Impact\",\"Trebuchet MS\",\"Verdana\"],\"transitionedFamilyList\":[\"Lato\"],\"hasTransitioned\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-fonts\"],\"state\":{\"timestamp\":1578461985524615}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_dc\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_st\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"value\":[]},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-hats_sth\"],\"state\":{\"timestamp\":1567493925214182}},{\"data\":{\"chartImport\":true,\"revisionHistoryModeNamedRevisions\":true,\"blameLaunch\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-global_promos\",\"0\"],\"state\":{\"timestamp\":1563258745565908}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"mae-show_addons_menu_promo\"],\"state\":{\"timestamp\":1529939567476561}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-aips\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-asp\",\"6\"],\"state\":{\"timestamp\":1563258745565908}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-ftbdct\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dbs\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"5\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"1\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"view\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-dv\",\"6\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-ht\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-homescreen-wws\"],\"state\":{\"timestamp\":1482907149909420}},{\"data\":{\"value\":1437372269957},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-etg-lvt\"],\"state\":{\"timestamp\":1437372269969588}},{\"data\":{\"viewMode\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"3\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":1},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"1\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":1},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"6\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"viewMode\":2},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-chrome\",\"5\"],\"state\":{\"timestamp\":1586330057248797}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-screenreader\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-enable_braille\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"docs-mute_collaborators\"],\"state\":{\"timestamp\":1589104758969000}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_chooser\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_link_form_promo\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_whats_new\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-expand_dasher_options\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"proto\":\"[1,3]\\n\"},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-auto_create_sink\"],\"state\":{\"timestamp\":1479292068378449}},{\"data\":{\"proto\":\"[3]\\n\"},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-ui_version\"],\"state\":{\"timestamp\":1495800084635353}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-questions_required_by_default\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-collect_usernames_by_default\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":0},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-default_point_value\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_assessments_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-autovalidate_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_qxq_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_braveheart_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_manual_grading_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_record_view_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_brain_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-has_seen_braveheart_theme_warning\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_custom_themes_toast\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_edu_bundle_18_toast\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_quizzes_intro\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_intro_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_add_a_step_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_business_forms_new_step_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":false},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_question_import_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_locked_mode_guided_help\"],\"state\":{\"timestamp\":1589103125176209}},{\"data\":{\"value\":true},\"keyPath\":[\"syncMap\",\"preferences\",\"freebird-show_draft_responses_modal\"],\"state\":{\"timestamp\":1589103125176209}}]", 1];
+</script>
+
+    <script>
+
+var videos = [
+  [
+    1,
+    "Title 1",
+    "https://instagram.ftpe7-1.fna.fbcdn.net/v/t50.16885-16/10000000_529236901102774_2729162006140258637_n.mp4?_nc_ht=instagram.ftpe7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=J2mCw_LSlpMAX-IZ1zR&oe=5EBF3482&oh=c8df35c32d0f0cc610d96e1e05224fd5"
+  ],
+  [
+    2,
+    "Title 2",
+    "https://instagram.ftpe7-1.fna.fbcdn.net/v/t50.16885-16/10000000_3187973091221292_3027533189586461094_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5pZ3R2In0&_nc_ht=instagram.ftpe7-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=iCUnITzTPOEAX_YQkVm&vs=17874350230613806_3306014903&_nc_vs=HBksFQAYJEdJQ1dtQUFzMzZmVGNWTUxBS2FoQVRkbDlRTXFidlZCQUFBRhUAAsgBABUAGCRHSzJEZEFWWGFPX1kwOTBJQU41aGZzam9pZUk2YnZWQkFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMRUAABgAFtztjImKqMA%2FFQIoAkMzLBdAca3bItDlYBgSZGFzaF9iYXNlbGluZV8xX3YxEQB17AcA&_nc_rid=5cc231152a&oe=5EBF8DFB&oh=c4151eea6efe1ba6f77b75c94f5a3b5a"
+  ],
+  [
+    2,
+    "Title 3",
+    "https://instagram.ftpe7-1.fna.fbcdn.net/v/t50.16885-16/10000000_3187973091221292_3027533189586461094_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5pZ3R2In0&_nc_ht=instagram.ftpe7-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=iCUnITzTPOEAX_YQkVm&vs=17874350230613806_3306014903&_nc_vs=HBksFQAYJEdJQ1dtQUFzMzZmVGNWTUxBS2FoQVRkbDlRTXFidlZCQUFBRhUAAsgBABUAGCRHSzJEZEFWWGFPX1kwOTBJQU41aGZzam9pZUk2YnZWQkFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMRUAABgAFtztjImKqMA%2FFQIoAkMzLBdAca3bItDlYBgSZGFzaF9iYXNlbGluZV8xX3YxEQB17AcA&_nc_rid=5cc231152a&oe=5EBF8DFB&oh=c4151eea6efe1ba6f77b75c94f5a3b5a"
+  ]
+];
+var videos_count = videos.length - 1;
+var video_current = 0;
+var $video_wrapper = document.getElementById("video-wrapper");
+var $video_player = document.getElementById("video-player");
+var $video_playlist = document.getElementById("video-playlist");
+var $video_order = document.getElementById("video-order");
+var $toggle_video = document.getElementById("toggle-video");
+var $play_next_video = document.getElementById("play-next-video");
+var $play_previous_video = document.getElementById("play-previous-video");
+
+$video_player.addEventListener("playing", videoPlaying);
+$video_player.addEventListener("pause", videoPause);
+$toggle_video.addEventListener("click", function (e) {
+  e.preventDefault();
+  if ($video_player.paused) {
+    $video_player.play();
+  } else {
+    $video_player.pause();
+  }
+});
+$play_next_video.addEventListener("click", function (e) {
+  e.preventDefault();
+  nextVideoCurrent();
+  videoLoad();
+  videoPlay();
+});
+$play_previous_video.addEventListener("click", function (e) {
+  e.preventDefault();
+  previousVideoCurrent();
+  videoLoad();
+  videoPlay();
+});
+function videoPlaying() {
+  $toggle_video.innerHTML = "Pause";
+}
+function videoPause() {
+  $toggle_video.innerHTML = "Play";
+}
+function showCurrentVideoOrder() {
+  $video_order.innerHTML =
+    videos[video_current][0] + " - " + videos[video_current][1];
+  $video_order.classList.add("show");
+}
+function videoLoad() {
+  $video_player.setAttribute("src", videos[video_current][2]);
+  $video_player.load();
+  showCurrentVideoOrder();
+}
+function videoPlay() {
+  $video_player.play();
+}
+function nextVideoCurrent() {
+  if (video_current < videos_count) {
+    video_current++;
+  } else {
+    video_current = 0;
+  }
+}
+function previousVideoCurrent() {
+  if (video_current == 0) {
+    video_current = videos_count;
+  } else {
+    video_current--;
+  }
+}
+function onVideoEnded() {
+  if (video_current < videos_count) {
+    $video_order.classList.remove("show");
+    nextVideoCurrent();
+    videoLoad();
+    videoPlay();
+  } else {
+    resetVideoplayer();
+  }
+}
+function resetVideoplayer() {
+  video_current = 0;
+  videoLoad();
+}
+function videoCreatePlaylist() {
+  for (i = 0; i < videos.length; i++) {
+    var node = document.createElement("div");
+    var anchor = document.createElement("a");
+    anchor.href = "#";
+    var class_attr = document.createAttribute("class");
+    class_attr.value = "playlist-item";
+    anchor.setAttributeNode(class_attr);
+    var data_attr = document.createAttribute("data-index");
+    data_attr.value = i;
+    anchor.setAttributeNode(data_attr);
+    var order = videos[i][0];
+    var title = videos[i][1];
+    var textnode = document.createTextNode(order + " - " + title);
+    anchor.appendChild(textnode);
+    node.appendChild(anchor);
+    $video_playlist.appendChild(node);
+  }
+}
+$video_playlist.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (event.target.classList.contains("playlist-item")) {
+    var data_index = event.target.dataset.index;
+    video_current = data_index;
+    videoLoad();
+    videoPlay();
+  }
+});
+function initVideoPlayer() {
+  $video_player.addEventListener("ended", onVideoEnded);
+  videoLoad();
+  videoCreatePlaylist();
+}
+window.addEventListener("load", initVideoPlayer);
+
+    </script>
 </body>
 </html>
