@@ -867,14 +867,6 @@ float: right;
 <script type="text/javascript" src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
 <script type="text/javascript">
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-  if (!isChrome){
-      $('#ChromeAudio').remove()
-  }
-  else {
-      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
-  }
-
 jQuery(document).ready(function ($) {
   var hamb = $("#hamburger"),
     sidebarContainer = $(".sidebar-container");
@@ -977,28 +969,7 @@ $(window).load(function() {
 </script>
 </head>
 <body>
-<!-- <div class="vimeo-wrapper"><iframe title="vimeo-player" src="https://player.vimeo.com/video/417266192?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> -->
 <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/818216356&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="display: none"></iframe>
-<!-- <iframe src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" allow="autoplay" style="display: none" id="ChromeAudio"></iframe>
-<audio autoplay loop style="display: none" id="playAudio">
-  <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
-</audio> -->
-<div class="sidebar-container">
-  <div class="sidebar-menu">
-    <div id="hamburger" class="hamburger">
-      <span class="line-1"></span>
-      <span class="line-2"></span>
-      <span class="line-3"></span>
-    </div>
-    <h1>夢所</h1>
-    <ul class="menu">
-      <li class="menu-item"><a data-content="指南" data-target="4" class="p4"><span class="outline">指南</span></a></li>
-      <li class="menu-item"><a data-content="採集室" data-target="5" class="p5"><span class="outline">採集室</span></a></li>
-      <li class="menu-item"><a data-content="檔案館" data-target="6" class="p6"><span class="outline">檔案館</span></a></li>
-      <li class="menu-item"><a data-content="展訊" data-target="8" class="p8"><span class="outline">展訊</span></a></li>
-    </ul>
-  </div>
-</div>
 <div class="main" id="main">
   <section class="section" data-index="1">
     <div class="page">
@@ -1104,8 +1075,7 @@ $(window).load(function() {
 
   <section class="section" data-index="6">
     <div class="page">
-      <h2><span class="outline">檔案館</span><span class="outline">目錄</span></h2>
-      <!-- overflow-y:scroll; -->
+      <!-- <h2><span class="outline">檔案館</span><span class="outline">目錄</span></h2>
       <ol>
         <li>2018/02/15 子水</li>
         <li>2019/12/14 尼莫</li>
@@ -1127,12 +1097,28 @@ $(window).load(function() {
         <li>2018/03/31 Dabi.Liu</li>
         <li>2018/02/15 子水</li>
         <li>2019/12/14 尼莫</li>
-      </ol>
+      </ol> -->
+      <div id="carousel" class="flexslider">
+        <ul class="slides">
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Woo Wang</span><br><span class="outline">2018/10/02</span><br><span class="outline">情緒 曲解事實 熱度 汁</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Xavia</span><br><span class="outline">2019/04/08</span><br><span class="outline">公園 浴缸 行李箱</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
+        </ul>
+      </div>
     </div>
   </section>
   <section class="section" data-index="7">
     <div class="page">
-      <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
+      <!-- <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
       <div></div>
       <h4>2018/02/23 子水</h4>
       <h3>夏天.溪水.飛</h3>
@@ -1140,7 +1126,78 @@ $(window).load(function() {
         <a href="#"><span class="outline">前一夜</span></a>
         <a href="#"><span class="outline">目錄</span></a>
         <a href="#"><span class="outline">後一夜</span></a>
+      </div> -->
+      <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
+      <div id="slider" class="flexslider">
+        <ul class="slides">
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://instagram.ftpe7-2.fna.fbcdn.net/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=instagram.ftpe7-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=XGfmHycCo4kAX96ZNBg&oh=64fe052bf571974f75114652d043197d&oe=5EC9E268'>
+              <source src='https://instagram.ftpe7-3.fna.fbcdn.net/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=instagram.ftpe7-3.fna.fbcdn.net&_nc_cat=102&_nc_ohc=59KeGHgGcFoAX-sgh3G&oe=5EC99DEC&oh=1e98cd1abd582b79d4801e3f13361797' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://instagram.ftpe7-4.fna.fbcdn.net/v/t51.2885-15/e35/98486179_1141074609580145_3309115354321465137_n.jpg?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_cat=105&_nc_ohc=Ui0wCBqG2CIAX8Pnx-X&oh=c499334badab3a820218718902bd3606&oe=5EC9ACF9'>
+              <source src='https://instagram.ftpe7-4.fna.fbcdn.net/v/t50.2886-16/98367595_684563218988417_2341835884565923436_n.mp4?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_cat=105&_nc_ohc=R6tVmS_FivIAX9DslcD&oe=5EC9C9EF&oh=461aea91ba483a19cd6d89a711fd4f05' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://instagram.ftpe7-3.fna.fbcdn.net/v/t51.2885-15/e35/97299959_138504494449256_4188796587177864010_n.jpg?_nc_ht=instagram.ftpe7-3.fna.fbcdn.net&_nc_cat=108&_nc_ohc=yQX9CmdAVQsAX-7GCSs&oh=e652ed0b05775100c3c141cff2993f32&oe=5EC9D692'>
+              <source src='https://instagram.ftpe7-3.fna.fbcdn.net/v/t50.2886-16/99254274_593069198080887_4118837707884369263_n.mp4?_nc_ht=instagram.ftpe7-3.fna.fbcdn.net&_nc_cat=103&_nc_ohc=tF7PPUYDF6oAX_9gir0&oe=5EC9A34D&oh=6fa8e9d2de6ac6c327bd31f549afc74f' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+          <li>
+            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
+              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
+            </video>
+          </li>
+        </ul>
       </div>
+      <div class="custom-navigation">
+        <a href="#" class="flex-prev"><span class="outline">前一夜</span></a>
+        <div class="custom-controls-container"></div>
+        <a href="#" class="flex-next"><span class="outline">後一夜</span></a>
+      </div>
+      <a data-content="檔案館" data-target="6" class="p6"><span class="outline">目錄</span></a>
     </div>
   </section>
   <section class="section" data-index="8">
@@ -1177,12 +1234,22 @@ $(window).load(function() {
     </div>
   </section>
 </div>
-<!-- <div class="block-heading">
-  <div class="container-block">
-    <h2 class="heading active first">WHAT WE<br /> <span class="bigger">DO</span></h2>
-    <h2 class="heading third">ABOUT<br /> <span class="bigger">US</span></h2>
+<div class="sidebar-container">
+  <div class="sidebar-menu">
+    <div id="hamburger" class="hamburger">
+      <span class="line-1"></span>
+      <span class="line-2"></span>
+      <span class="line-3"></span>
+    </div>
+    <h1>夢所</h1>
+    <ul class="menu">
+      <li class="menu-item"><a data-content="指南" data-target="4" class="p4"><span class="outline">指南</span></a></li>
+      <li class="menu-item"><a data-content="採集室" data-target="5" class="p5"><span class="outline">採集室</span></a></li>
+      <li class="menu-item"><a data-content="檔案館" data-target="6" class="p6"><span class="outline">檔案館</span></a></li>
+      <li class="menu-item"><a data-content="展訊" data-target="8" class="p8"><span class="outline">展訊</span></a></li>
+    </ul>
   </div>
-</div> -->
+</div>
 <script type="text/javascript" nonce="">
 var FB_PUBLIC_LOAD_DATA_ = [null, [null, [
     [1515626317, "我是", null, 0, [
