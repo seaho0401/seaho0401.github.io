@@ -952,23 +952,20 @@ $(window).load(function() {
   $('#carousel').flexslider({
     animation: "slide",
     direction: "vertical",
-    controlNav: false,
     animationLoop: false,
     slideshow: false,
-    itemMargin: 1,
-    move: 0,
+    controlNav: false,
     asNavFor: '#slider'
   });
  
   $('#slider').flexslider({
     animation: "slide",
-    direction: "vertical",
-    controlNav: false,
     animationLoop: false,
     slideshow: false,
-    sync: "#carousel",
+    controlNav: false,
     controlsContainer: $(".custom-controls-container"),
-    customDirectionNav: $(".custom-navigation a")
+    customDirectionNav: $(".custom-navigation a"),
+    sync: "#carousel"
   });
 });
 </script>
