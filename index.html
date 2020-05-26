@@ -584,9 +584,6 @@ width: 100%;
 max-width: 320px;
 }
 }
-.main .section:nth-child(6) ol {
-overflow-y: scroll;
-}
 .main .section:nth-child(8) .page{
 width: 502px;
 }
@@ -696,11 +693,18 @@ margin: 0;
 padding: 0;
 }
 .flexslider .slides > li {
-margin: 0;
+margin: 0 0 1.25rem 0;
 padding: 0;
 list-style: none;
 display: flex;
 -webkit-backface-visibility: hidden;
+text-align: left;
+}
+.flexslider .slides > li:nth-child(odd) {
+text-align: left;
+}
+.flexslider .slides > li:nth-child(even) {
+text-align: right;
 }
 .flexslider .slides img {
 width: 100%;
@@ -1075,58 +1079,35 @@ $(window).load(function() {
 
   <section class="section" data-index="6">
     <div class="page">
-      <!-- <h2><span class="outline">檔案館</span><span class="outline">目錄</span></h2>
-      <ol>
-        <li>2018/02/15 子水</li>
-        <li>2019/12/14 尼莫</li>
-        <li>2018/03/31 Dabi.Liu</li>
-        <li>2018/02/15 子水</li>
-        <li>2019/12/14 Audrey Huang</li>
-        <li>2018/03/31 MiuMiu</li>
-        <li>2018/02/15 海倫寶貝</li>
-        <li>2019/12/14 尼莫</li>
-        <li>2018/03/31 Dabi.Liu</li>
-        <li>2018/02/15 喵喵大師</li>
-        <li>2019/12/14 尼莫
-        <li>2018/03/31 Dabi.Liu</li>
-        <li>2018/02/15 子水</li>
-        <li>2019/12/14 尼莫</li>
-        <li>2018/03/31 Dabi.Liu</li>
-        <li>2018/02/15 子水</li>
-        <li>2019/12/14 尼莫</li>
-        <li>2018/03/31 Dabi.Liu</li>
-        <li>2018/02/15 子水</li>
-        <li>2019/12/14 尼莫</li>
-      </ol> -->
+      <h2><span class="outline">檔案館</span><span class="outline">目錄</span></h2>
       <div id="carousel" class="flexslider">
-        <ul class="slides">
+        <ol class="slides">
           <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
           <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Woo Wang</span><br><span class="outline">2018/10/02</span><br><span class="outline">情緒 曲解事實 熱度 汁</span></a></li>
           <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Xavia</span><br><span class="outline">2019/04/08</span><br><span class="outline">公園 浴缸 行李箱</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-          <li><a data-content="檔案館" data-target="7" class="p7"><span class="outline">Sea Ho</span><br><span class="outline">2020/05/17</span><br><span class="outline">油漆 房間 帆船</span></a></li>
-        </ul>
+          <li><a><span class="outline">SaeHo</span><br><span class="outline">2019/04/08</span></a></li>
+          <li><a><span class="outline">F</span><br><span class="outline">2020/2/12</span></a></li>
+          <li><a><span class="outline">F</span><br><span class="outline">2019/3/16</span></a></li>
+          <li><a><span class="outline">zxczxczxc95</span><br><span class="outline">2019/08/23</span></a></li>
+          <li><a><span class="outline">C</span><br><span class="outline">2020/05/11</span></a></li>
+          <li><a><span class="outline">Zozoi Shih</span><br><span class="outline">∞/∞/∞</span></a></li>
+          <li><a><span class="outline">HC</span><br><span class="outline">20171219</span></a></li>
+          <li><a><span class="outline">HC</span><br><span class="outline">20171219</span></a></li>
+          <li><a><span class="outline">G</span><br><span class="outline">2017/12/23</span></a></li>
+          <li><a><span class="outline">HC</span><br><span class="outline">20180110</span></a></li>
+          <li><a><span class="outline">HC</span><br><span class="outline">201805</span></a></li>
+          <li><a><span class="outline">G</span><br><span class="outline">2019/11/20</span></a></li>
+          <li><a><span class="outline">Inkio</span><br><span class="outline">20180324</span></a></li>
+          <li><a><span class="outline">G</span><br><span class="outline">2020/4/27</span></a></li>
+          <li><a><span class="outline">Hc</span><br><span class="outline">2019.2</span></a></li>
+          <li><a><span class="outline">HC</span><br><span class="outline">20200521的85週前</span></a></li>
+          <li><a><span class="outline">Nini</span><br><span class="outline">2014/10/29後</span></a></li>
+        </ol>
       </div>
     </div>
   </section>
   <section class="section" data-index="7">
     <div class="page">
-      <!-- <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
-      <div></div>
-      <h4>2018/02/23 子水</h4>
-      <h3>夏天.溪水.飛</h3>
-      <div>
-        <a href="#"><span class="outline">前一夜</span></a>
-        <a href="#"><span class="outline">目錄</span></a>
-        <a href="#"><span class="outline">後一夜</span></a>
-      </div> -->
       <h2><span class="outline">檔案館</span><span class="outline">夢</span></h2>
       <div id="slider" class="flexslider">
         <ul class="slides">
@@ -1145,51 +1126,11 @@ $(window).load(function() {
               <source src='https://instagram.ftpe7-3.fna.fbcdn.net/v/t50.2886-16/99254274_593069198080887_4118837707884369263_n.mp4?_nc_ht=instagram.ftpe7-3.fna.fbcdn.net&_nc_cat=103&_nc_ohc=tF7PPUYDF6oAX_9gir0&oe=5EC9A34D&oh=6fa8e9d2de6ac6c327bd31f549afc74f' type='video/mp4'>
             </video>
           </li>
-          <li>
+          <!-- <li>
             <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
               <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
             </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
-          <li>
-            <video class='labnol' width='100%' height='auto' controls poster='https://scontent-bos3-1.cdninstagram.com/v/t51.2885-15/e35/97307425_105399054446171_2596328389012102668_n.jpg?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=m0eTpJPyTDAAX-ik02X&oh=23e5f66d268cf7599fab7369931c9faa&oe=5EC73F68'>
-              <source src='https://scontent-bos3-1.cdninstagram.com/v/t50.2886-16/97864582_138523814423294_5141468324560634059_n.mp4?_nc_ht=scontent-bos3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=chelXQon1wcAX-klShQ&oe=5EC7A3AC&oh=ff679fac7063c4b12a5cfc16b2a5d83c' type='video/mp4'>
-            </video>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="custom-navigation">
