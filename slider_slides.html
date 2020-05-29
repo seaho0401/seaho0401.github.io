@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+<script type="text/javascript">
+var public_spreadsheet_url = '1zIFXlw7-L1yuRsl_gRTHEaOqoRddTu3Zf5GUN5gPFAw';
+function init() {
+		Tabletop.init( {
+			key: public_spreadsheet_url,
+			callback: showInfo,
+			simpleSheet: true } );
+}
+function showInfo(data) {
+  var html = "";
+	for ( i = 0; i < data.length; i++ ) {
+					html +="<li><a data-content='檔案館' data-target='7' class='p7'><span class='outline'>" + data[i].我是 + "</span><br><span class='outline'>" + data[i].夢的戳記 + "</span><br><span class='outline'>" + data[i].我的夢 + "</span></a></li>";
+	}
+	document.getElementById("carousel_slides").innerHTML = html;
+
+}
+init();
+</script>
+</head>
+<body>
+</head>
+<body>
+        <ol id="carousel_slides" class="slides"></ol>
+</body>
+</html>
